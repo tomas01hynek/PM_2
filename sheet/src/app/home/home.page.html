@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    
+    <ion-title>Digimon Index Register</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    
+    <div id="container">
+      <ion-button (click) = "openModal()">Choosse Digimon</ion-button> 
+    </div>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div *ngIf="countriesDataArray.length > 0">
+    <ion-item *ngFor="let item of countriesDataArray">
+      <img src="{{ item.images[0].href }}" class="imagesMax">
+      <ion-item>DigimonID: #{{ item.id }}</ion-item>
+      <ion-item [routerLink]="['/detail', item.name]" (click)="sendData(item)">{{ item.name }}</ion-item>  
+    </ion-item>
+  </div>
+
+</ion-content>
+
+<style>
+.imagesMax {
+  max-width: 100px;
+  max-height: 100px;
+}  
+
+
+
+  
+</style>

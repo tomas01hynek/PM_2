@@ -1,0 +1,139 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Digimon detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Digimon detail</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="sideBySide">
+    <h1 class="header"> {{ this.name }}</h1>
+  </div>
+
+  <div class="sideBySide">
+    <caption>PICTURE:</caption>
+    <img class="detailImage" src="{{ this.images }}">
+    
+    <div id="columns">
+      <div id="right">
+        <caption>TYPE:</caption>
+        <h2>{{ type }}</h2>
+      </div>
+  
+      <div id="left">
+        <caption>LEVEL:</caption>
+        <h2>{{ level }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <h2>Overview(EN/JAP):</h2>
+
+  <div>
+    <div>
+      <h3 style="font-style: italic;" >{{ description_first_language }}</h3>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <h3 style="font-style: italic;" >{{ description_second_language }}</h3>
+    </div>
+  </div>
+
+  <style>
+
+  .sideBySide {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .detailImage {
+      width: 200px;
+  }
+
+  .sideMe {
+    margin: 1rem;
+    background: #2891fa;
+    width: 12rem;
+    border-radius: 6px;
+    padding: 0.3rem;
+    text-align: center;
+    color: #fff;
+  }
+
+  .sideMe:hover {
+    background: #1a5a99;
+  }
+
+  .detailImage {
+    width: 200px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .header {
+    font-size: 4rem; /* 4 * 16px */
+    font-weight: bold;
+    color: #3498db;
+    background: linear-gradient(to left, #3498db,  #00416c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 1rem;
+    margin-right: 3rem;
+  }
+
+  #columns div h2 {
+    margin: 1rem;
+    background: #2891fa;
+    width: 12rem;
+    border-radius: 6px;
+    padding: 0.3rem;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  #columns div h2:hover {
+    background: #1a5a99;
+  }
+
+ #sideBySide h2 {
+  margin: 1rem;
+  background: #2891fa;
+  width: 12rem;
+  border-radius: 6px;
+  padding: 0.3rem;
+ }
+
+ #sideBySide {
+  display: flex;
+ }
+
+  #columns {
+    display: flex;
+  }
+
+  caption {
+    font-weight: bold;
+  }
+
+  @media only screen and (max-width: 700px){
+    #columns {
+      flex-direction: column;
+    }
+  }
+
+  </style>
+  
+</ion-content>

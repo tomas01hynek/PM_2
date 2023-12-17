@@ -1,0 +1,27 @@
+<ion-content>
+
+  <ion-button (click)="dismissModal()">Close</ion-button>
+  <ion-button (click)="resetCheckboxes()">Reset</ion-button>
+  <ion-button (click)="selectAllCheckboxes()">SetAll</ion-button>
+  <ion-button (click)="submit()">Submit</ion-button>
+
+  <ion-item-divider color="primary">Vyhledávací seznam:</ion-item-divider>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="onSearchChange($event)"></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let item of filteredItems">
+      <ion-label>{{ item.label }}</ion-label>
+      <ion-checkbox [(ngModel)]="item.checked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <ion-item-divider color="secondary">Celkový seznam:</ion-item-divider>
+
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-label>{{ item.label }}</ion-label>
+      <ion-checkbox [(ngModel)]="item.checked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>

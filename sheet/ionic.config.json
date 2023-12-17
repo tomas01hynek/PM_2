@@ -1,0 +1,7 @@
+{
+  "name": "sheet",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
